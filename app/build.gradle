@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "nl.uva.mobile.crowddetector"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -27,4 +27,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     implementation 'ca.heartlandsoftware:androidheatmap:1.1.1'
+
+    implementation 'com.jsibbold:zoomage:1.1.0'
 }
