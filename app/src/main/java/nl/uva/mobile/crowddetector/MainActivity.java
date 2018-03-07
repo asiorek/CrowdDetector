@@ -16,6 +16,7 @@ import java.util.Random;
 
 import ca.hss.heatmaplib.HeatMap;
 
+//TODO: Create buttons for getting information for each floor
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getCanonicalName();

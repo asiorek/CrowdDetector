@@ -16,6 +16,8 @@ import java.util.Random;
 
 import ca.hss.heatmaplib.HeatMap;
 
+//TODO: Add jpg files for each floor.
+//TODO: According to the clicked button on MainActivity, open proper jpg file with a floor.
 public class HeatMapActivity extends AppCompatActivity {
 
     private static final String TAG = HeatMapActivity.class.getCanonicalName();
