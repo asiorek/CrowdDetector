@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         //get the spinner from the xml.
 
         //create a list of items for the spinner.
-        String[] cities = new String[]{"Choose a city","Amstedam", "Rotterdam", "Utrecht"};
+        String[] cities = new String[]{"Choose a city","Amsterdam", "Rotterdam", "Utrecht"};
         String[] unis = new String[]{"Choose a university", "UvA", "VU", "HvA"};
         String[] floors = new String[]{"Choose a floor","Ground floor", "1st floor", "2nd floor"};
 
