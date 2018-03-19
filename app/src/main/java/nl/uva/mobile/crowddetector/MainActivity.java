@@ -9,6 +9,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import java.io.IOException;
+
+import nl.uva.mobile.crowddetector.rest.HeatMapClient;
+import nl.uva.mobile.crowddetector.rest.ServiceGenerator;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 //TODO: Create buttons for getting information for each floor
 public class MainActivity extends AppCompatActivity {
 
@@ -24,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
         Spinner dduni = findViewById(R.id.university);
         Spinner ddfloor = findViewById(R.id.floor);
 
-
-
         final Intent intent = new Intent(this, HeatMapWebViewActivity.class);
 
         mybutton.setOnClickListener(new View.OnClickListener() {
@@ -33,15 +40,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
                 Log.d(TAG, "onClick: Button clicked");
+
             }
         });
-
-
 
         //get the spinner from the xml.
 
         //create a list of items for the spinner.
-        String[] cities = new String[]{"Amstedam", "Rotterdam", "Utrecht"};
+        String[] cities = new String[]{"Amsterdam", "Rotterdam", "Utrecht"};
         String[] unis = new String[]{"UvA", "VU", "HvA"};
         String[] floors = new String[]{"Ground floor", "1st floor", "2nd floor"};
 
@@ -55,15 +61,5 @@ public class MainActivity extends AppCompatActivity {
         ddcity.setAdapter(adapter);
         dduni.setAdapter(adapter2);
         ddfloor.setAdapter(adapter3);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
     }
 }
