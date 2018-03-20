@@ -5,11 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.webkit.WebView;
 
-import java.io.IOException;
-
 import nl.uva.mobile.crowddetector.rest.HeatMapClient;
 import nl.uva.mobile.crowddetector.rest.ServiceGenerator;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -48,26 +45,22 @@ public class HeatMapWebViewActivity extends AppCompatActivity {
         Log.d(TAG, "getCrowdData: ");
         HeatMapClient downloadService = ServiceGenerator.createService(HeatMapClient.class);
 
-        Call<ResponseBody> call = downloadService.downloadFileWithCrowdData();
+        Call<String> call = downloadService.downloadFileWithCrowdData();
 
-        call.enqueue(new Callback<ResponseBody>() {
+        call.enqueue(new Callback<String>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            public void onResponse(Call<String> call, Response<String> response) {
                 if (response.isSuccessful()) {
-                    try {
-                        Log.d(TAG, "server contacted" + response.body().string());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
+                    String responseString = response.body();
+                    Log.d(TAG, "server contacted" + responseString);
                 } else {
                     Log.d(TAG, "server contact failed");
                 }
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Log.e(TAG, "error");
+            public void onFailure(Call<String> call, Throwable t) {
+                Log.e(TAG, "Error" + t.getMessage());
             }
         });
     }

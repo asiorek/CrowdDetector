@@ -14,6 +14,6 @@ public interface HeatMapClient {
 
     @Streaming //annotation to get large files
     @GET("/ground")
-    Call<ResponseBody> downloadFileWithCrowdData();
+    Call<String> downloadFileWithCrowdData();
 }
 
