@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         //create a list of items for the spinner.
         String[] cities = new String[]{"Choose a city","Amsterdam", "Rotterdam", "Utrecht"};
-        String[] unis = new String[]{"Choose a university", "UvA", "VU", "HvA"};
+        String[] unis = new String[]{"Choose a university", "Science Park", "VU", "HvA"};
         String[] floors = new String[]{"Choose a floor","Ground floor", "1st floor", "2nd floor"};
 
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
