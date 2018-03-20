@@ -66,7 +66,7 @@ function draw() {
     base_image = new Image();
     base_image.src = 'ground_floor.jpg';
     base_image.onload = function(){
-        context.drawImage(base_image, 15, 100, canvas.width, canvas.height);
+        context.drawImage(base_image, 0, 0, canvas.width, canvas.height);
     }
 
   heat.draw(0.5);
